@@ -10,7 +10,7 @@
       yyyy = today.getFullYear(),
       nextYear = yyyy + 1,
       hh = today.getHours(),
-      monthDay = "10/15/",
+      monthDay = "10/19/",
       givingDay = monthDay + yyyy;
   
   today = mm + "/" + dd + "/" + yyyy;
