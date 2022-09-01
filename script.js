@@ -2,27 +2,30 @@
   const second = 1000,
         minute = second * 60,
         hour = minute * 60,
-        day = hour * 24;
+        day = hour * 24,
+        startTime = 12,
+        givingDay22 = "10/19/2022",
+        givingDay23 = "10/18/2023",
+        givingDay24 = "10/16/2024";
 
   let today = new Date(),
       dd = String(today.getDate()).padStart(2, "0"),
       mm = String(today.getMonth() + 1).padStart(2, "0"),
       yyyy = today.getFullYear(),
-      nextYear = yyyy + 1,
       hh = today.getHours(),
-      monthDay = "10/19/",
-      givingDay = monthDay + yyyy;
+      givingDay = givingDay22;
   
   today = mm + "/" + dd + "/" + yyyy;
-  if (today > givingDay) {
-    givingDay = monthDay + nextYear;
+  if (today > givingDay22) {
+    givingDay = givingDay23;
   }
   
   const countDown = new Date(givingDay).getTime(),
+  const countDownPlus12 = new Date(givingDay).getTime() + (startTime*60*60*1000);
       x = setInterval(function() {    
 
         const now = new Date().getTime(),
-              distance = countDown - now;
+              distance = countDownPlus12 - now;
 
         document.getElementById("days").innerText = Math.floor(distance / (day)),
           document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
