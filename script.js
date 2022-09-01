@@ -20,25 +20,24 @@
     givingDay = givingDay23;
   }
   
-  const countDown = new Date(givingDay).getTime(),
+  const countDown = new Date(givingDay).getTime();
   const countDownPlus12 = new Date(givingDay).getTime() + (startTime*60*60*1000);
       x = setInterval(function() {    
 
-        const now = new Date().getTime(),
-              distance = countDownPlus12 - now;
+        const now = new Date().getTime();
+        distance = countDownPlus12 - now;
 
-        document.getElementById("days").innerText = Math.floor(distance / (day)),
-          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+        document.getElementById("days").innerText = Math.floor(distance / (day));
+        document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour));
+        document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute));
+        document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
 
-//do something later when date is reached
         if (distance < 0) {
           document.getElementById("headline").innerText = "It's Giving Day!";
           document.getElementById("countdown").style.display = "none";
           document.getElementById("content").style.display = "block";
           clearInterval(x);
         }
-        //seconds
+
       }, 0)
   }());
