@@ -55,6 +55,8 @@ li span {
   font-size: 4.5rem;
 }
 
+
+
 .flex-list {
     position: relative;
     margin: 1em;
@@ -75,6 +77,8 @@ li span {
     text-align: center;
     border-left: 2px solid #ffc425;
 }
+
+.flex-list li:first-child { border-left: none; }
 
 .emoji {
   display: none;
